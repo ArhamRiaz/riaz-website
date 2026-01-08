@@ -1,0 +1,17 @@
+<script>
+	import ExperienceCard from './ExperienceCard.svelte';
+
+	export let experiences;
+</script>
+
+<section id="experience" class="mx-auto max-w-3xl px-4">
+	<h2 class="mb-8 text-2xl font-bold text-white">Work Experience</h2>
+
+	<div class="relative border-l border-zinc-800">
+		<div class="space-y-10">
+			{#each experiences as exp}
+				<ExperienceCard {...exp} />
+			{/each}
+		</div>
+	</div>
+</section>
