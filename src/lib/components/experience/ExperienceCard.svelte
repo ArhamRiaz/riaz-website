@@ -8,7 +8,7 @@
 
 <div class="relative pl-10">
 	<!-- Timeline dot -->
-	<span class="absolute top-2 left-3 h-3 w-3 rounded-full bg-indigo-500"></span>
+	<!-- <span class="absolute top-2 left-3 h-3 w-3 rounded-full bg-indigo-500"></span> -->
 
 	<div class="rounded-xl border border-zinc-800 bg-zinc-900 p-5 shadow-sm">
 		<div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
