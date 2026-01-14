@@ -5,7 +5,7 @@ export interface Experience {
 	dates: string;
 	bullets: string[];
 	tech: string[];
-	logo?: string;
+	logo: string;
 }
 
 export const experiences: Experience[] = [
@@ -20,7 +20,7 @@ export const experiences: Experience[] = [
 			'Administered and supported the company’s ERP system by managing and optimizing S3 storage and EC2 usage, monitoring resource utilization with CloudWatch, and reducing monthly AWS infrastructure costs by 15%.'
 		],
 		tech: ['TypeScript', 'React', 'Node.js', 'Kotlin', 'AWS', 'MSSQL'],
-		logo: '/bridge.png'
+		logo: '/bridge.jpg'
 	},
 	{
 		id: 'Ross',

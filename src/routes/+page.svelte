@@ -13,7 +13,7 @@
 
 <!-- <Header /> -->
 <div class="mx-auto">
-	<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+	<div class="mx-auto max-w-5xl sm:px-6 lg:px-8">
 		<section class="home-section">
 			<div class="space-y-0.5">
 				<h1 class="text-[48px] font-semibold">Arham Riaz</h1>
@@ -39,13 +39,12 @@
 				/>
 			</div>
 		</section>
+		<section class="">
+			<ExperienceTimeline {experiences} />
+		</section>
+
+		<section class="">
+			<ProjectTimeline {projects}></ProjectTimeline>
+		</section>
 	</div>
-
-	<section class="px-4 sm:px-6 lg:px-12">
-		<ExperienceTimeline {experiences} />
-	</section>
-
-	<section class="px-4 sm:px-6 lg:px-12">
-		<ProjectTimeline {projects}></ProjectTimeline>
-	</section>
 </div>

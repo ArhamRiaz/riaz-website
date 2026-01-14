@@ -3,7 +3,7 @@
 	import ExperienceModal from './ExperienceModal.svelte';
 	import ExperienceCard from './ExperienceCard.svelte';
 	import type { Experience } from './Experience';
-	import { fade, fly } from 'svelte/transition';
+	import { fade, fly, crossfade } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
 
 	export let experiences;
@@ -25,30 +25,37 @@
 	}
 
 	let selected: Experience | null | any = null;
+
+	const [send, receive] = crossfade({
+		duration: (d) => Math.max(0, d * 0),
+		fallback(node, params) {
+			return {
+				duration: 0,
+				css: (t) => `opacity: ${t}`
+			};
+		}
+	});
 </script>
 
 <section
 	id="experience"
-	class="mx-auto max-w-7xl px-4"
+	class="mx-auto max-w-5xl px-4"
 	role="button"
 	tabindex="0"
 	on:click={collapse}
 	on:keydown={(e) => e.key === 'Escape' && collapse()}
 >
-	<h2 class="mb-8 text-2xl font-bold">Experience</h2>
+	<h2 class="mb-8 pt-6 text-2xl font-bold">Experience</h2>
 
 	<div
-		class="grid grid-cols-1
-					gap-6
-					sm:grid-cols-2
-					lg:grid-cols-3"
+		class="grid grid-cols-1 gap-6
+		"
 	>
 		{#each experiences as exp (exp.id)}
 			<button type="button" on:click|stopPropagation class="relative" animate:flip>
 				{#if activeIds.has(exp.id)}
 					<div
-						in:fly={{ y: 12, duration: 240 }}
-						out:fly={{ y: -8, duration: 200 }}
+						in:receive={{ key: exp.id }}
 						role="button"
 						tabindex="0"
 						on:click={() => toggle(exp.id)}
@@ -60,8 +67,7 @@
 					<div
 						role="button"
 						tabindex="0"
-						in:fly={{ y: -8, duration: 200 }}
-						out:fly={{ y: 12, duration: 200 }}
+						out:send={{ key: exp.id }}
 						on:click={() => toggle(exp.id)}
 						on:keydown={(e) => e.key === 'Enter' && toggle(exp.id)}
 					>

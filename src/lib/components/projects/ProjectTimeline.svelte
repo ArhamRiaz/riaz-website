@@ -29,7 +29,7 @@
 
 <section
 	id="project"
-	class="mx-auto max-w-7xl px-4"
+	class="mx-auto max-w-5xl px-4"
 	role="button"
 	tabindex="0"
 	on:click={collapse}
@@ -41,7 +41,7 @@
 		class="grid grid-cols-1
 					gap-6
 					sm:grid-cols-2
-					lg:grid-cols-3"
+					"
 	>
 		{#each projects as exp (exp.id)}
 			<button type="button" on:click|stopPropagation class="relative" animate:flip>
