@@ -3,7 +3,7 @@
 	export let name;
 	// export let description;
 	// export let github;
-
+	export let thumbnail;
 	export let tech;
 </script>
 
@@ -11,13 +11,13 @@
 	class="cursor-pointer rounded-xl bg-stone-100 p-5 text-left shadow-sm transition hover:-translate-y-1 hover:bg-stone-200 dark:bg-zinc-950 dark:hover:bg-zinc-900"
 >
 	<div class="flex items-start gap-4">
-		<!-- <div
-			class="flex h-12 w-12 items-center justify-center rounded-lg
+		<div
+			class="flex h-24 w-40 items-center justify-center rounded-lg
 			       bg-stone-200 text-sm font-semibold
 			       dark:bg-zinc-800"
 		>
-			<img src={logo} alt="logo" />
-		</div> -->
+			<img src={thumbnail} alt="thumbnail" />
+		</div>
 
 		<div class="flex-1">
 			<!-- <h3 class="font-medium">{experience.role}</h3>

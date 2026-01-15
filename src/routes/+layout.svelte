@@ -34,7 +34,7 @@
 			<nav class="flex flex-col gap-6 text-sm">
 				<a href="/" class="opacity-80 hover:opacity-100">About</a>
 				<a href="/#experience" class="opacity-80 hover:opacity-100">Experience</a>
-				<a href="/about" class="opacity-80 hover:opacity-100">Projects</a>
+				<a href="/#project" class="opacity-80 hover:opacity-100">Projects</a>
 			</nav>
 		</aside>
 

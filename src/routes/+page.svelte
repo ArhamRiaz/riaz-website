@@ -17,12 +17,12 @@
 		<section class="home-section">
 			<div class="space-y-0.5">
 				<h1 class="text-[48px] font-semibold">Arham Riaz</h1>
-				<h4 class=" text-[24px]">Software Developer</h4>
+				<h4 class=" pb-4 text-[24px]">Software Developer</h4>
 			</div>
 		</section>
 
 		<section class="home-section space-y-1">
-			<h3 class="section-label pt-15 pb-2 text-[18px]">About</h3>
+			<h2 class="mb-8 pt-16 text-2xl font-bold">About</h2>
 			<div class="text-sm md:text-base">
 				<p>
 					Hi!! I’m a software developer with an Honours Bachelor of Computer Science Co-op degree
