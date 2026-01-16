@@ -27,7 +27,7 @@
 		>
 			<button
 				onclick={handleToggle}
-				class="rounded-lg pb-6 text-sm hover:bg-stone-200 dark:border-zinc-700"
+				class="cursor-pointer rounded-lg pb-6 text-sm opacity-80 hover:opacity-100"
 			>
 				{theme === 'dark' ? 'Dark 🌙' : 'Light ☀️'}
 			</button>

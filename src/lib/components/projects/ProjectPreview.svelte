@@ -1,8 +1,8 @@
 <script>
 	// export let experience;
 	export let name;
-	// export let description;
-	// export let github;
+	export let description;
+	export let github;
 	export let thumbnail;
 	export let tech;
 </script>
@@ -22,10 +22,16 @@
 		<div class="flex-1">
 			<!-- <h3 class="font-medium">{experience.role}</h3>
 			<p class="text-sm text-zinc-500">{experience.company}</p> -->
-			<div>
-				<h3 class="font-semibold">{name}</h3>
+			<div class="flex flex-col gap-1 text-left sm:flex-row sm:items-center sm:justify-start">
+				<h3 class="text-2xl font-semibold">{name}</h3>
 				<!-- <p class="text-sm text-zinc-400">{company}</p> -->
+				<span class="ml-auto text-sm text-zinc-500"
+					><a href={github} target="_blank" rel="noopener noreferrer" on:click|stopPropagation
+						><img src="/github.png" alt="github logo" class="h-8" />
+					</a></span
+				>
 			</div>
+			<div>{description}</div>
 
 			<div class="mt-3 flex flex-wrap gap-2">
 				{#each tech as t}

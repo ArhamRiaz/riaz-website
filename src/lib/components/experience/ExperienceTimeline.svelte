@@ -39,7 +39,7 @@
 
 <section
 	id="experience"
-	class="mx-auto max-w-5xl px-4"
+	class="mx-auto max-w-5xl"
 	role="button"
 	tabindex="0"
 	on:click={collapse}

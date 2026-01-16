@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
-	import ProjectCard from './ProjectCard.svelte';
-	import ProjectModal from './ProjectModal.svelte';
 	import ProjectPreview from './ProjectPreview.svelte';
 	import type { Project } from './Projects';
 
@@ -29,7 +27,7 @@
 
 <section
 	id="project"
-	class="mx-auto max-w-5xl px-4"
+	class="mx-auto max-w-5xl"
 	role="button"
 	tabindex="0"
 	on:click={collapse}
@@ -45,7 +43,7 @@
 	>
 		{#each projects as exp (exp.id)}
 			<button type="button" on:click|stopPropagation class="relative" animate:flip>
-				{#if activeIds.has(exp.id)}
+				<!-- {#if activeIds.has(exp.id)}
 					<div
 						in:fly={{ y: 12, duration: 240 }}
 						out:fly={{ y: -8, duration: 200 }}
@@ -56,21 +54,21 @@
 					>
 						<ProjectCard {...exp} />
 					</div>
-				{:else}
-					<div
+				{:else} -->
+				<a href={exp.link} target="_blank"
+					><div
 						role="button"
 						tabindex="0"
 						in:fly={{ y: -8, duration: 200 }}
 						out:fly={{ y: 12, duration: 200 }}
-						on:click={() => toggle(exp.id)}
+						on:click={() => exp.id}
 						on:keydown={(e) => e.key === 'Enter' && toggle(exp.id)}
 					>
 						<ProjectPreview {...exp} />
-					</div>
-				{/if}
+					</div></a
+				>
+				<!-- {/if} -->
 			</button>
 		{/each}
 	</div>
-
-	<ProjectModal project={selected} onClose={() => (selected = null)} />
 </section>
