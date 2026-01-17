@@ -22,7 +22,7 @@
 		<div class="flex-1">
 			<!-- <h3 class="font-medium">{experience.role}</h3>
 			<p class="text-sm text-zinc-500">{experience.company}</p> -->
-			<div class="flex flex-col gap-1 text-left sm:flex-row sm:items-center sm:justify-start">
+			<div class="flex flex-col gap-1 pb-4 text-left sm:flex-row sm:items-center sm:justify-start">
 				<h3 class="text-2xl font-semibold">{name}</h3>
 				<!-- <p class="text-sm text-zinc-400">{company}</p> -->
 				<span class="ml-auto text-sm text-zinc-500"

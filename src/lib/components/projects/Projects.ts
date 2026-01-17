@@ -23,7 +23,7 @@ export const projects: Project[] = [
 		id: 'personal-website',
 		name: 'This Website!!',
 		description:
-			"The website you are currently on, built with SvelteKit, Typescript, Tailwind and good ol' HTML.",
+			"The website you are currently on, built with SvelteKit, Typescript, TailwindCSS and good ol' HTML.",
 		github: 'https://github.com/ArhamRiaz/riaz-website',
 		tech: ['SvelteKit', 'TypeScript', 'Tailwind', 'HTML'],
 		thumbnail: '/album-tracker.png'
