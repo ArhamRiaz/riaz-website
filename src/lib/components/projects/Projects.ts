@@ -15,7 +15,7 @@ export const projects: Project[] = [
 		id: 'album',
 		name: 'Album Tracking Website',
 		description:
-			'A website designed to allow users to track what music albums they have listened to and want to listen to.',
+			'A website designed to allow users to track what music albums they have listened to and want to listen to. Built and deployed using AWS (Amplify, Lambda, DynamoDB, Route53) to gain experience.',
 		github: 'https://github.com/ArhamRiaz/AlbumListProject',
 		tech: ['JavaScript', 'Node.js', 'DynamoDB', 'Amplify', 'Lambda'],
 		thumbnail: '/album-tracker.png',

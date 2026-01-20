@@ -13,15 +13,8 @@
 
 <div class=" mx-auto pt-8 pb-12">
 	<div
-		class="mx-auto max-w-4xl rounded-xl border border-amber-600 pb-12 shadow-xl sm:px-6 lg:px-8 dark:border-white dark:bg-zinc-900"
+		class="mx-auto max-w-4xl rounded-xl border border-white pb-12 shadow-2xl sm:px-6 lg:px-8 dark:border-black dark:bg-zinc-900 dark:shadow-white"
 	>
-		<!-- <section class="home-section">
-			<div class="space-y-0.5">
-				<h1 class="text-[48px] font-semibold">Arham Riaz</h1>
-				<h4 class=" pb-4 text-[24px]">Software Developer</h4>
-			</div>
-		</section> -->
-
 		<section class="home-section space-y-1">
 			<h2 class="mb-8 pt-16 text-2xl font-bold">About</h2>
 			<div class="text-sm md:text-base">

@@ -21,7 +21,7 @@
 	class="
 		min-h-screen
 		bg-linear-to-b
-		from-stone-200
+		from-stone-300
 		via-stone-100
 		to-stone-50
 		text-stone-800
@@ -37,7 +37,7 @@
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="flex flex-col lg:flex-row lg:gap-8">
 			<aside
-				class="w-86 shrink-0 overflow-auto rounded-xl border px-12 py-24 lg:sticky lg:top-32 dark:bg-zinc-900"
+				class="w-86 shrink-0 overflow-auto rounded-xl border border-white px-12 py-12 shadow-2xl lg:sticky lg:top-32 dark:border-black dark:bg-zinc-900 dark:shadow-white"
 				style="top: calc(18vh - var(--header-height)); height: calc(94vh - var(--header-height));"
 			>
 				<section class="home-section">
