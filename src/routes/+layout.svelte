@@ -1,12 +1,18 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/logo.png';
-	import { ModeWatcher, toggleMode } from 'mode-watcher';
+	import { ModeWatcher, toggleMode, mode } from 'mode-watcher';
 	import Header from '$lib/components/Header.svelte';
+	import { onMount } from 'svelte';
 
 	let { children } = $props();
 
-	let theme = $state('light');
+	//let theme = $state<'light' | 'dark'>('light');
+	let theme = $state();
+
+	onMount(() => {
+		theme = mode.current;
+	});
 
 	function handleToggle() {
 		toggleMode();
