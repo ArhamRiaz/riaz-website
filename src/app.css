@@ -28,3 +28,7 @@ html {
 [id] {
 	scroll-margin-top: var(--scroll-offset);
 }
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}

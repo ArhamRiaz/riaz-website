@@ -27,15 +27,15 @@
 	class="
 		min-h-screen
 		bg-linear-to-b
-		from-stone-300
-		via-stone-100
+		from-stone-50
+		via-stone-50
 		to-stone-50
 		text-stone-800
 		transition-colors
 
 		dark:from-zinc-950
-		dark:via-zinc-900
-		dark:to-zinc-800
+		dark:via-zinc-950
+		dark:to-zinc-950
 		dark:text-zinc-100
 	"
 >

@@ -22,6 +22,15 @@ export const projects: Project[] = [
 		link: 'https://www.album-tracker.com/'
 	},
 	{
+		id: 'expanding-mineseeeper',
+		name: 'Expanding Minesweeper',
+		description:
+			'A version of Minesweeper that expands the board from beginner to intermediate to expert once a board has been beaten, built with Java.',
+		github: 'https://github.com/ArhamRiaz/expanding-minesweeper',
+		tech: ['Java'],
+		thumbnail: '/minesweeper.png'
+	},
+	{
 		id: 'personal-website',
 		name: 'This Website!!',
 		description:
