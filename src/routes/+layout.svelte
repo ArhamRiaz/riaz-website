@@ -60,10 +60,10 @@
 					title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
 				>
 					{#if theme === 'dark'}
-						<img src="/sun_icon.png" alt="" aria-hidden="true" class="h-6 w-6" />
+						<img src="./sun_icon.png" alt="" aria-hidden="true" class="h-6 w-6" />
 						<span class="sr-only">Switch to light mode</span>
 					{:else}
-						<img src="/star_icon.png" alt="" aria-hidden="true" class="h-6 w-6" />
+						<img src="./star_icon.png" alt="" aria-hidden="true" class="h-6 w-6" />
 						<span class="sr-only">Switch to dark mode</span>
 					{/if}
 				</button>
@@ -76,7 +76,7 @@
 				<ul class="mt-8 ml-1 flex items-center" aria-label="Socials">
 					<li class="mr-5 shrink-0 text-xs">
 						<a href="https://github.com/ArhamRiaz" target="_blank" rel="noopener noreferrer"
-							><img src="/github.png" alt="github logo" class="h-8" />
+							><img src="./github.png" alt="github logo" class="h-8" />
 						</a>
 					</li>
 					<li class="mr-5 shrink-0 text-xs">
@@ -84,7 +84,7 @@
 							href="https://www.linkedin.com/in/arham-riaz-3a742222b/"
 							target="_blank"
 							rel="noopener noreferrer"
-							><img src="/linkedin2.png" alt="github logo" class="h-8" />
+							><img src="./linkedin2.png" alt="github logo" class="h-8" />
 						</a>
 					</li>
 				</ul>

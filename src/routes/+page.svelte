@@ -39,14 +39,14 @@
 				<div class="columns-2 gap-2 pt-4 text-center">
 					<p class="pb-2">Currently playing</p>
 					<img
-						src="/hollow-knight.png"
+						src="./hollow-knight.png"
 						alt="hollow knight"
 						class="inline-block h-60 w-auto rounded-2xl align-middle outline-offset-2 outline-solid"
 					/>
 
 					<p class="pb-2">Currently Reading</p>
 					<img
-						src="/malcolm-x-bio.jpg"
+						src="./malcolm-x-bio.jpg"
 						alt="malcolm x"
 						class="inline-block h-60 w-auto rounded-2xl align-middle outline-offset-2 outline-solid"
 					/>

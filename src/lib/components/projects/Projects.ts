@@ -18,7 +18,7 @@ export const projects: Project[] = [
 			'A website designed to allow users to track what music albums they have listened to and want to listen to. Built and deployed using AWS (Amplify, Lambda, DynamoDB, Route53) to gain experience.',
 		github: 'https://github.com/ArhamRiaz/AlbumListProject',
 		tech: ['JavaScript', 'Node.js', 'DynamoDB', 'Amplify', 'Lambda'],
-		thumbnail: '/album-tracker.png',
+		thumbnail: './album-tracker.png',
 		link: 'https://www.album-tracker.com/'
 	},
 	{
@@ -28,7 +28,7 @@ export const projects: Project[] = [
 			'A version of Minesweeper that expands the board from beginner to intermediate to expert once a board has been beaten, built with Java.',
 		github: 'https://github.com/ArhamRiaz/expanding-minesweeper',
 		tech: ['Java'],
-		thumbnail: '/minesweeper.png'
+		thumbnail: './minesweeper.png'
 	},
 	{
 		id: 'personal-website',

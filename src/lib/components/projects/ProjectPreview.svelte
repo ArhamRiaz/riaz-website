@@ -27,7 +27,7 @@
 				<!-- <p class="text-sm text-zinc-400">{company}</p> -->
 				<span class="ml-auto text-right text-sm text-zinc-500"
 					><a href={github} target="_blank" rel="noopener noreferrer" on:click|stopPropagation
-						><img src="/github.png" alt="github logo" class="h-8" />
+						><img src="./github.png" alt="github logo" class="h-8" />
 					</a></span
 				>
 			</div>

@@ -22,7 +22,7 @@ export const experiences: Experience[] = [
 			'Optimized and restructured Microsoft SQL Server stored procedures to improve Power BI integrations, reducing query times by 40%, significantly boosting reporting accuracy and refresh speed.'
 		],
 		tech: ['TypeScript', 'React', 'Node.js', 'Kotlin', 'AWS', 'MSSQL'],
-		logo: '/bridge.jpg'
+		logo: './bridge.jpg'
 	},
 	{
 		id: 'Carleton',
@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
 			'Graded and provided detailed feedback on 3 assignments to over 100 students, evaluating students’ understanding of key course concepts.'
 		],
 		tech: ['JUnit', 'Spring Boot', 'Cucumber', 'Selenium', 'TDD', 'BDD'],
-		logo: '/carleton.jpg'
+		logo: './carleton.jpg'
 	},
 	{
 		id: 'Ross',
@@ -51,6 +51,6 @@ export const experiences: Experience[] = [
 			'Led code reviews and worked with team members to troubleshoot, debug and optimize code.'
 		],
 		tech: ['TypeScript', 'React', 'Node.js', 'PostgreSQL', 'TDD'],
-		logo: '/ross.png'
+		logo: './ross.png'
 	}
 ];
