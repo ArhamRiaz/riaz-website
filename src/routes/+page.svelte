@@ -61,8 +61,8 @@
 						Currently Playing
 					</p>
 					<img
-						src="./hollow-knight.png"
-						alt="Hollow Knight"
+						src="./ds3.jpg"
+						alt="Dark Souls III"
 						class="w-full rounded-lg object-cover shadow-sm"
 					/>
 				</div>
