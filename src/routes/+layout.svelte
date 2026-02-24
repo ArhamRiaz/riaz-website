@@ -2,27 +2,53 @@
 	import '../app.css';
 	import favicon from '$lib/assets/logo.png';
 	import { ModeWatcher, toggleMode, mode } from 'mode-watcher';
-	import Header from '$lib/components/Header.svelte';
 	import { onMount } from 'svelte';
+	import TwinklingStars from '$lib/components/TwinklingStars.svelte';
 
 	let { children } = $props();
 
-	//let theme = $state<'light' | 'dark'>('light');
-	let theme = $state();
+	let theme = $state<string | undefined>(undefined);
+	let scrolled = $state(false);
+	let activeSection = $state('');
 
 	onMount(() => {
 		theme = mode.current;
+
+		const handleScroll = () => {
+			scrolled = window.scrollY > 24;
+
+			const sections = ['about', 'experience', 'projects'];
+			for (const id of [...sections].reverse()) {
+				const el = document.getElementById(id);
+				if (el && window.scrollY >= el.offsetTop - 120) {
+					activeSection = id;
+					break;
+				}
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		handleScroll();
+		return () => window.removeEventListener('scroll', handleScroll);
 	});
 
 	function handleToggle() {
 		toggleMode();
 		theme = theme === 'dark' ? 'light' : 'dark';
 	}
+
+	function scrollToSection(e: MouseEvent, id: string) {
+		e.preventDefault();
+		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+	}
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
-<!-- style="top: var(--header-height); height: calc(100vh - var(--header-height));" -->
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
+
 <ModeWatcher />
+
 <div
 	class="
 		min-h-screen
@@ -32,67 +58,100 @@
 		to-stone-50
 		text-stone-800
 		transition-colors
-
 		dark:from-zinc-950
 		dark:via-zinc-950
 		dark:to-zinc-950
 		dark:text-zinc-100
 	"
 >
-	<Header></Header>
-	<div class="mx-auto max-w-6xl px-6">
-		<div class="flex flex-col lg:flex-row lg:gap-8">
-			<aside
-				class="w-86 shrink-0 overflow-auto rounded-xl border border-white px-12 py-12 shadow-2xl lg:sticky lg:top-32 dark:border-black dark:bg-zinc-900 dark:shadow-white"
-				style="top: calc(18vh - var(--header-height)); height: calc(94vh - var(--header-height));"
-			>
-				<section class="home-section">
-					<div class="space-y-0.5">
-						<h1 class="text-[40px] font-semibold">Arham Riaz</h1>
-						<h4 class=" pb-4 text-[24px]">Software Developer</h4>
-					</div>
-				</section>
+	<TwinklingStars
+		starImage="./single_star.png"
+		numberOfStars={50}
+		minSize={10}
+		maxSize={30}
+		twinkleSpeed={2}
+	/>
+
+	<!-- HEADER -->
+	<header
+		class="
+			fixed top-0 right-0 left-0 z-50
+			transition-all duration-300
+			{scrolled
+			? 'border-b border-stone-200 bg-stone-50/80 shadow-sm backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80'
+			: 'border-b border-transparent bg-transparent'}
+		"
+	>
+		<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+			<!-- Nav Links -->
+			<nav class="flex items-center gap-1">
+				{#each [['About', 'about'], ['Experience', 'experience'], ['Projects', 'projects']] as [label, id]}
+					<a
+						href="#{id}"
+						onclick={(e) => scrollToSection(e, id)}
+						class="
+							relative rounded-full px-4 py-1.5 text-sm font-medium tracking-wide
+							uppercase transition-colors duration-200
+							{activeSection === id
+							? 'bg-stone-200/70 text-stone-900 dark:bg-zinc-800/70 dark:text-zinc-100'
+							: 'text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:text-zinc-400 dark:hover:bg-zinc-800/50 dark:hover:text-zinc-100'}
+						"
+					>
+						{label}
+					</a>
+				{/each}
+			</nav>
+
+			<!-- Right side: socials + theme toggle -->
+			<div class="flex items-center gap-4">
+				<ul class="flex items-center gap-3" aria-label="Socials">
+					<li>
+						<a
+							href="https://github.com/ArhamRiaz"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="block opacity-60 transition-opacity hover:opacity-100"
+						>
+							<img src="./github.png" alt="GitHub" class="h-5 w-5" />
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://www.linkedin.com/in/arham-riaz-3a742222b/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="block opacity-60 transition-opacity hover:opacity-100"
+						>
+							<img src="./linkedin2.png" alt="LinkedIn" class="h-5 w-5" />
+						</a>
+					</li>
+				</ul>
+
+				<div class="h-4 w-px bg-stone-300 dark:bg-zinc-700"></div>
+
 				<button
 					onclick={handleToggle}
-					class="flex cursor-pointer items-center rounded-lg pb-6 text-sm opacity-80 hover:opacity-100"
+					class="flex cursor-pointer items-center rounded-full p-1.5 opacity-60 transition-all hover:bg-stone-100 hover:opacity-100 dark:hover:bg-zinc-800"
 					aria-pressed={theme === 'dark'}
 					aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
 					title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
 				>
 					{#if theme === 'dark'}
-						<img src="./sun_icon.png" alt="" aria-hidden="true" class="h-6 w-6" />
+						<img src="./sun_icon.png" alt="" aria-hidden="true" class="h-5 w-5" />
 						<span class="sr-only">Switch to light mode</span>
 					{:else}
-						<img src="./star_icon.png" alt="" aria-hidden="true" class="h-6 w-6" />
+						<img src="./star_icon.png" alt="" aria-hidden="true" class="h-5 w-5" />
 						<span class="sr-only">Switch to dark mode</span>
 					{/if}
 				</button>
-				<nav class="flex flex-col gap-6 text-lg">
-					<a href="/" class="scroll-smooth opacity-80 hover:opacity-100">About</a>
-					<a href="/#experience" class="opacity-80 hover:opacity-100">Experience</a>
-					<a href="/#project" class="opacity-80 hover:opacity-100">Projects</a>
-				</nav>
-
-				<ul class="mt-8 ml-1 flex items-center" aria-label="Socials">
-					<li class="mr-5 shrink-0 text-xs">
-						<a href="https://github.com/ArhamRiaz" target="_blank" rel="noopener noreferrer"
-							><img src="./github.png" alt="github logo" class="h-8" />
-						</a>
-					</li>
-					<li class="mr-5 shrink-0 text-xs">
-						<a
-							href="https://www.linkedin.com/in/arham-riaz-3a742222b/"
-							target="_blank"
-							rel="noopener noreferrer"
-							><img src="./linkedin2.png" alt="github logo" class="h-8" />
-						</a>
-					</li>
-				</ul>
-			</aside>
-
-			<main class="order-2 flex-1">
-				{@render children()}
-			</main>
+			</div>
 		</div>
+	</header>
+
+	<!-- MAIN CONTENT -->
+	<div class="relative z-10 mx-auto max-w-6xl px-6 pt-24">
+		<main>
+			{@render children()}
+		</main>
 	</div>
 </div>
