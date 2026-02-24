@@ -72,7 +72,6 @@
 		twinkleSpeed={2}
 	/>
 
-	<!-- HEADER -->
 	<header
 		class="
 			fixed top-0 right-0 left-0 z-50
@@ -83,7 +82,6 @@
 		"
 	>
 		<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-			<!-- Nav Links -->
 			<nav class="flex items-center gap-1">
 				{#each [['About', 'about'], ['Experience', 'experience'], ['Projects', 'projects']] as [label, id]}
 					<a
@@ -102,7 +100,6 @@
 				{/each}
 			</nav>
 
-			<!-- Right side: socials + theme toggle -->
 			<div class="flex items-center gap-4">
 				<ul class="flex items-center gap-3" aria-label="Socials">
 					<li>
@@ -112,7 +109,7 @@
 							rel="noopener noreferrer"
 							class="block opacity-60 transition-opacity hover:opacity-100"
 						>
-							<img src="./github.png" alt="GitHub" class="h-5 w-5" />
+							<img src="./github.png" alt="GitHub" class="h-5 w-5 dark:invert" />
 						</a>
 					</li>
 					<li>
@@ -122,7 +119,7 @@
 							rel="noopener noreferrer"
 							class="block opacity-60 transition-opacity hover:opacity-100"
 						>
-							<img src="./linkedin2.png" alt="LinkedIn" class="h-5 w-5" />
+							<img src="./linkedin2.png" alt="LinkedIn" class="h-5 w-5 dark:invert" />
 						</a>
 					</li>
 				</ul>
@@ -148,7 +145,6 @@
 		</div>
 	</header>
 
-	<!-- MAIN CONTENT -->
 	<div class="relative z-10 mx-auto max-w-6xl px-6 pt-24">
 		<main>
 			{@render children()}

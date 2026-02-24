@@ -28,9 +28,9 @@
 						stack development.
 					</p>
 					<p class="pt-4 text-xl">
-						My hobbies include: Rock Climbing, Film, the NBA, Cricket, Reading Manga and playing
-						Video Games. Feel free to get in contact with me, whether to talk programming, tech or
-						anything else!!
+						My hobbies include: rock climbing, film, the NBA, reading manga and playing video games.
+						Feel free to get in contact with me, whether to talk programming, tech or anything
+						else!!
 					</p>
 				</div>
 			</section>
